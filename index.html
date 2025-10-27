@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almo | AI Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background: #f4f7fa;
+        --sidebar-bg: #ffffff;
+        --board-bg: #f4f7fa;
+        --card-bg: #ffffff;
+        --header-bg: #ffffff;
+        --primary-text: #1e293b;
+        --secondary-text: #64748b;
+        --border-color: #e2e8f0;
+        --hover-bg: #f1f5f9;
+        --input-bg: #f8fafc;
+        --accent-color: #4f46e5;
+        --accent-color-hover: #4338ca;
+      }
+      html.dark {
+        color-scheme: dark;
+        --background: #0f172a;
+        --sidebar-bg: #1e293b;
+        --board-bg: #0f172a;
+        --card-bg: #1e293b;
+        --header-bg: #1e293b;
+        --primary-text: #f1f5f9;
+        --secondary-text: #94a3b8;
+        --border-color: #334155;
+        --hover-bg: #28364b;
+        --input-bg: #334155;
+        --accent-color: #6366f1;
+        --accent-color-hover: #818cf8;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--primary-text);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+      }
+      html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 10px;
+      }
+      html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #6b7280;
+      }
+       :root .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 10px;
+      }
+       :root .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #a8a29e;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-[--background]">
+<div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

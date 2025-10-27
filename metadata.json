@@ -1,0 +1,5 @@
+{
+  "name": "AI Task Manager",
+  "description": "A modern task management application inspired by Monday.com, featuring collaborative boards, customizable task properties, and AI-powered subtask generation with Google Gemini to streamline your workflow.",
+  "requestFramePermissions": []
+}
