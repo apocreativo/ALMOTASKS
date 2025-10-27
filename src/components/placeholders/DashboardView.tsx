@@ -13,21 +13,23 @@ const DashboardView: React.FC<DashboardViewProps> = ({ boardData, allUsers }) =>
   const completedTasks = allTasks.filter(t => t.properties['col-status'] === Status.Done).length;
   const completionPercentage = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-  const tasksByStatus = allTasks.reduce((acc, task) => {
+  // FIX: Explicitly type the accumulator in `reduce` to ensure correct type inference.
+  // This prevents `Object.values` and `Object.entries` from returning `unknown` types.
+  const tasksByStatus = allTasks.reduce((acc: Record<string, number>, task) => {
     const status = task.properties['col-status'] as Status;
     if (status) {
       acc[status] = (acc[status] || 0) + 1;
     }
     return acc;
-  }, {} as Record<Status, number>);
+  }, {});
 
-  const tasksByAssignee = allTasks.reduce((acc, task) => {
+  const tasksByAssignee = allTasks.reduce((acc: Record<string, number>, task) => {
       const assignee = task.properties['col-assignee'] as User;
       if (assignee && assignee.id) {
           acc[assignee.id] = (acc[assignee.id] || 0) + 1;
       }
       return acc;
-  }, {} as Record<string, number>);
+  }, {});
 
   const maxTasksByStatus = Math.max(...Object.values(tasksByStatus), 1);
   const maxTasksByAssignee = Math.max(...Object.values(tasksByAssignee), 1);
